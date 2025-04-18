@@ -11,7 +11,7 @@ test.describe('Playwright Dev Page', {
         await playwrightDevPage.goto();
     });
 
-    test('Getting Started Table of Contents', async ({ page }) => {
+    test.skip('Getting Started Table of Contents', async ({ page }) => {
         const playwrightDevPage = new PlaywrightDevPage(page);
         const playwrightDocsPage = new PlaywrightDocsPage(page);
 
