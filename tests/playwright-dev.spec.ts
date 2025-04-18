@@ -11,13 +11,12 @@ test.describe('Playwright Dev Page', {
         await playwrightDevPage.goto();
     });
 
-    test.skip('Getting Started Table of Contents', async ({ page }) => {
+    test('Getting Started Table of Contents', async ({ page }) => {
         const playwrightDevPage = new PlaywrightDevPage(page);
         const playwrightDocsPage = new PlaywrightDocsPage(page);
 
         await playwrightDevPage.goto();
         await playwrightDevPage.getStarted();
-        await playwrightDocsPage.pageObjectModel();
 
         await expect(playwrightDocsPage.tocList).toHaveText([
             `How to install Playwright`,
@@ -29,6 +28,10 @@ test.describe('Playwright Dev Page', {
             `Generate tests with Codegen`,
             `See a trace of your tests`
         ]);
+
+        await playwrightDocsPage.pageObjectModel();
+        await expect(page.locator('article')).toContainText('Page Object Model is a common pattern');
+
     });
 
     test('Section navigation', async ({ page }) => {
