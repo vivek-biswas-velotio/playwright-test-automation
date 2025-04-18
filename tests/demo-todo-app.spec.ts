@@ -10,8 +10,9 @@ const TODO_ITEMS = [
   'book a doctors appointment'
 ] as const;
 
-test.describe('New Todo', () => {
+test.describe('New Todo', {
   tag: '@new-todo'
+},() => {
 
   test('should allow me to add todo items', async ({ page }) => {
     // create a new todo locator
@@ -71,8 +72,9 @@ test.describe('New Todo', () => {
   });
 });
 
-test.describe('Mark all as completed', () => {
+test.describe('Mark all as completed', {
   tag: '@mark-all-as-completed'
+},() => {
 
   test.beforeEach(async ({ page }) => {
     await createDefaultTodos(page);
@@ -123,8 +125,9 @@ test.describe('Mark all as completed', () => {
   });
 });
 
-test.describe('Todo Item', () => {
+test.describe('Todo Item', {
   tag: '@todo-item'
+},() => {
 
   test('should allow me to mark items as complete', async ({ page }) => {
     // create a new todo locator
@@ -196,8 +199,9 @@ test.describe('Todo Item', () => {
   });
 });
 
-test.describe('Todo Editing', () => {
+test.describe('Todo Editing', {
   tag: '@todo-editing'
+},() => {
 
   test.beforeEach(async ({ page }) => {
     await createDefaultTodos(page);
@@ -263,8 +267,9 @@ test.describe('Todo Editing', () => {
   });
 });
 
-test.describe('Todo Counter', () => {
+test.describe('Todo Counter', {
   tag: '@todo-counter'
+},() => {
 
   test('should display the current number of todo items', async ({ page }) => {
     // create a new todo locator
@@ -286,8 +291,9 @@ test.describe('Todo Counter', () => {
   });
 });
 
-test.describe('Todo Clear completed button', () => {
+test.describe('Todo Clear completed button', {
   tag: '@todo-clear-completed'
+},() => {
 
   test.beforeEach(async ({ page }) => {
     await createDefaultTodos(page);
@@ -313,8 +319,9 @@ test.describe('Todo Clear completed button', () => {
   });
 });
 
-test.describe('Todo Persistence', () => {
+test.describe('Todo Persistence', {
   tag: '@todo-persistence'
+},() => {
 
   test('should persist its data', async ({ page }) => {
     // create a new todo locator
@@ -343,8 +350,9 @@ test.describe('Todo Persistence', () => {
   });
 });
 
-test.describe('Todo Routing', () => {
+test.describe('Todo Routing', {
   tag: '@todo-routing'
+},() => {
 
   test.beforeEach(async ({ page }) => {
     await createDefaultTodos(page);

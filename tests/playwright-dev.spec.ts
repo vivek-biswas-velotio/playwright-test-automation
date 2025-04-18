@@ -3,9 +3,9 @@ import { PlaywrightDevPage } from '../pages/playwright-dev-page';
 import { PlaywrightDocsPage } from '../pages/playwright-docs-page';
 import { HeaderTabs, LanguageDropdownOptions } from '../enums/playwright-common-enums';
 
-test.describe('Playwright Dev Page', () => {
+test.describe('Playwright Dev Page', {
     tag: '@playwright-dev'
-
+},() => {
     test.beforeEach(async ({ page }) => {
         const playwrightDevPage = new PlaywrightDevPage(page);
         await playwrightDevPage.goto();
@@ -56,9 +56,5 @@ test.describe('Playwright Dev Page', () => {
             body: screenshot,
             contentType: 'image/png',
         });
-    });
-
-    test.afterAll(async ({ page }) => {
-        await page.close();
     });
 });
