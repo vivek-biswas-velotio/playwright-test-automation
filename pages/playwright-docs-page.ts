@@ -14,7 +14,7 @@ export class PlaywrightDocsPage extends PlaywrightComonPage {
         this.pomLink = page.locator('li', {
             hasText: 'Guides',
         }).locator('a', {
-            hasText: 'Page object model',
+            hasText: 'Page Object Model',
         });
         this.tocList = page.locator('article div.markdown ul > li > a');
     }
