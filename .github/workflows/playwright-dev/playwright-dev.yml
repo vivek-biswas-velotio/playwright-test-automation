@@ -1,8 +1,8 @@
 name: Playwright Tests - Dev
 
 on:
-  push:
-    schedule:
+  workflow_dispatch:
+  schedule:
     - cron: '30 18 * * *'  # Runs at 12:00 AM IST (18:30 UTC )
 
 jobs:
