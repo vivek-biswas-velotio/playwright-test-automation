@@ -1,24 +1,24 @@
 name: Playwright Test Template
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       test-name:
         description: 'Test name to run'
         required: true
-        default: 'All'
+        type: string
       test-tags:
         description: 'Test tags to run'
         required: true
-        default: ''
+        type: string
 
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
       with:
         node-version: 18
     - name: Install dependencies
@@ -27,7 +27,7 @@ jobs:
       run: npx playwright install --with-deps
     - name: Test ${{ inputs.test-name }}
       run: npx playwright test --grep ${{ inputs.test-tags }}
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       if: always()
       with:
         name: playwright-report
