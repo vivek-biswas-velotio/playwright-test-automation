@@ -1,6 +1,5 @@
 import { type Locator, type Page } from '@playwright/test';
-import { PlaywrightComonPage } from './playwright-comon-page';
-
+import { PlaywrightComonPage } from './playwright-common-page';
 export class PlaywrightDocsPage extends PlaywrightComonPage {
 
     readonly page: Page;

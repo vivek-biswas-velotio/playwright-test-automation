@@ -1,0 +1,33 @@
+name: Playwright Tests - Todo
+
+on:
+  schedule:
+    - cron: '30 18 * * *'  # Runs at 12:00 AM IST (18:30 UTC )
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        tag-group:
+          - name: 'new-todo'
+            tags: '@new-todo'
+          - name: 'mark-completed'
+            tags: '@mark-all-as-completed'
+          - name: 'todo-item'
+            tags: '@todo-item'
+          - name: 'todo-editing'
+            tags: '@todo-editing'
+          - name: 'todo-counter'
+            tags: '@todo-counter'
+          - name: 'todo-clear'
+            tags: '@todo-clear-completed'
+          - name: 'todo-persistence'
+            tags: '@todo-persistence'
+          - name: 'todo-routing'
+            tags: '@todo-routing'
+
+    uses: ./.github/workflows/playwright-template.yml
+    with:
+      test-name: ${{ matrix.tag-group.name }}
+      test-tags: ${{ matrix.tag-group.tags }}
+    secrets: inherit 

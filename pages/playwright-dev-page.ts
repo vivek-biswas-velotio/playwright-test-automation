@@ -1,6 +1,6 @@
 import { expect, type Locator, type Page } from "@playwright/test";
-import { PlaywrightComonPage } from "./playwright-comon-page";
-import { HeaderTabs } from "../enums/playwright-enums";
+import { HeaderTabs } from "../enums/playwright-common-enums";
+import { PlaywrightComonPage } from "./playwright-common-page";
 
 export class PlaywrightDevPage extends PlaywrightComonPage {
     readonly page: Page;

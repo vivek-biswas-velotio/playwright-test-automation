@@ -1,6 +1,6 @@
 import { expect, type Locator, type Page } from "@playwright/test";
-import { HeaderTabs } from "../enums/playwright-enums";
-import { LanguageDropdownOptions } from "../enums/playwright-enums";
+import { HeaderTabs } from "../enums/playwright-common-enums";
+import { LanguageDropdownOptions } from "../enums/playwright-common-enums";
 
 export class PlaywrightComonPage {
 

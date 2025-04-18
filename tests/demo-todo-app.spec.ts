@@ -11,6 +11,8 @@ const TODO_ITEMS = [
 ] as const;
 
 test.describe('New Todo', () => {
+  tag: '@new-todo'
+
   test('should allow me to add todo items', async ({ page }) => {
     // create a new todo locator
     const newTodo = page.getByPlaceholder('What needs to be done?');
@@ -70,6 +72,8 @@ test.describe('New Todo', () => {
 });
 
 test.describe('Mark all as completed', () => {
+  tag: '@mark-all-as-completed'
+
   test.beforeEach(async ({ page }) => {
     await createDefaultTodos(page);
     await checkNumberOfTodosInLocalStorage(page, 3);
@@ -119,7 +123,8 @@ test.describe('Mark all as completed', () => {
   });
 });
 
-test.describe('Item', () => {
+test.describe('Todo Item', () => {
+  tag: '@todo-item'
 
   test('should allow me to mark items as complete', async ({ page }) => {
     // create a new todo locator
@@ -191,7 +196,9 @@ test.describe('Item', () => {
   });
 });
 
-test.describe('Editing', () => {
+test.describe('Todo Editing', () => {
+  tag: '@todo-editing'
+
   test.beforeEach(async ({ page }) => {
     await createDefaultTodos(page);
     await checkNumberOfTodosInLocalStorage(page, 3);
@@ -256,7 +263,9 @@ test.describe('Editing', () => {
   });
 });
 
-test.describe('Counter', () => {
+test.describe('Todo Counter', () => {
+  tag: '@todo-counter'
+
   test('should display the current number of todo items', async ({ page }) => {
     // create a new todo locator
     const newTodo = page.getByPlaceholder('What needs to be done?');
@@ -277,7 +286,9 @@ test.describe('Counter', () => {
   });
 });
 
-test.describe('Clear completed button', () => {
+test.describe('Todo Clear completed button', () => {
+  tag: '@todo-clear-completed'
+
   test.beforeEach(async ({ page }) => {
     await createDefaultTodos(page);
   });
@@ -302,7 +313,9 @@ test.describe('Clear completed button', () => {
   });
 });
 
-test.describe('Persistence', () => {
+test.describe('Todo Persistence', () => {
+  tag: '@todo-persistence'
+
   test('should persist its data', async ({ page }) => {
     // create a new todo locator
     const newTodo = page.getByPlaceholder('What needs to be done?');
@@ -330,7 +343,9 @@ test.describe('Persistence', () => {
   });
 });
 
-test.describe('Routing', () => {
+test.describe('Todo Routing', () => {
+  tag: '@todo-routing'
+
   test.beforeEach(async ({ page }) => {
     await createDefaultTodos(page);
     // make sure the app had a chance to save updated todos in storage

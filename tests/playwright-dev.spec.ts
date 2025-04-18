@@ -1,9 +1,11 @@
 import { test, expect, type Page } from '@playwright/test';
 import { PlaywrightDevPage } from '../pages/playwright-dev-page';
 import { PlaywrightDocsPage } from '../pages/playwright-docs-page';
-import { HeaderTabs, LanguageDropdownOptions } from '../enums/playwright-enums';
+import { HeaderTabs, LanguageDropdownOptions } from '../enums/playwright-common-enums';
 
 test.describe('Playwright Dev Page', () => {
+    tag: '@playwright-dev'
+
     test.beforeEach(async ({ page }) => {
         const playwrightDevPage = new PlaywrightDevPage(page);
         await playwrightDevPage.goto();
