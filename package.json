@@ -2,7 +2,10 @@
   "name": "playwright-test-automation",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "tagBased": "npx playwright test --grep $",
+    "uiExecution": "npx playwright test --ui"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
